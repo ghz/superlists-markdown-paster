@@ -10,10 +10,19 @@ USE_CLIPBOARD = True
 running = True
 simulating = False
 
+DIVIDER_STRING = "/di"
+
 # Delays between keystrokes
-FAST_TYPING_DELAY = 0.016  # Ultra-fast delay for most keystrokes
-SLOW_TYPING_DELAY = 0.05   # Slower delay for separators
-ENTER_DELAY = 0.015
+FAST_TYPING_DELAY = 0.022  # Ultra-fast delay for most keystrokes
+DIVIDER_TYPING_DELAY = 0.6   # Slower delay for separators
+
+# Ajoutez cette ligne pour définir un délai global
+BEFORE_ENTER_DELAY = 0.15  # Délai avant d'appuyer sur la touche entrée
+AFTER_ENTER_DELAY = 0.15
+
+# Ajoutez ces lignes pour définir les variables globales
+CHARACTER_PAUSE_LIMIT = 100  # Nombre de caractères après lesquels faire une pause
+CHARACTER_PAUSE_DURATION = 0.6  # Durée de la pause en secondes
 
 # Test text if not using the clipboard
 TEST_TEXT = """# This Week
@@ -44,15 +53,16 @@ ___
 > *Voltaire*
 """
 
+
 def transform_text(text):
-    # Replace "- [ ]" with "- []"
-    text = text.replace("- [ ]", "- []")
-    # Replace "---" or "___" with "/divider"
+    # Replace "- [ ]" with "[]"
+    text = text.replace("- [ ]", "[]")
+    # Replace "---" or "___" with DIVIDER_STRING
     lines = text.splitlines()
     transformed_lines = []
     for line in lines:
         if line.strip() == "---" or line.strip() == "___":
-            transformed_lines.append("/divider")
+            transformed_lines.append(DIVIDER_STRING)
         else:
             transformed_lines.append(line)
     return "\n".join(transformed_lines)
@@ -69,6 +79,7 @@ def simulate_typing(text):
     
     lines = text.splitlines()
     in_list = False  # To track if we are in a list
+    char_count = 0  # Compteur de caractères tapés
     for i, line in enumerate(lines):
         if not simulating:
             print("Simulation interrupted.")
@@ -76,7 +87,7 @@ def simulate_typing(text):
         
         # Check if the line is part of a list
         is_list_item = line.lstrip().startswith(('-')) or (line.lstrip() and line.lstrip()[0].isdigit() and '.' in line.lstrip()[:3])
-        is_task_item = line.lstrip().startswith("- []")
+        is_task_item = line.lstrip().startswith("[]")
         
         # Simulate typing the line
         j = 0
@@ -88,31 +99,18 @@ def simulate_typing(text):
             elif not is_list_item:
                 in_list = False
             
-            if line[j:].startswith("[") and "](" in line[j:]:
-                # Handle markdown links
-                end_link = line.find(")", j)
-                if end_link != -1:
-                    for char in line[j:end_link+1]:
-                        keyboard.press(char)
-                        keyboard.release(char)
-                        time.sleep(FAST_TYPING_DELAY)
-                    keyboard.press(Key.space)
-                    keyboard.release(Key.space)
-                    time.sleep(FAST_TYPING_DELAY)
-                    j = end_link + 1
-                    continue
-            elif line.startswith("/divider"):
-                # Handle separators
-                for char in "/divider":
-                    keyboard.press(char)
-                    keyboard.release(char)
-                    time.sleep(SLOW_TYPING_DELAY)
-                j += 8  # Length of "/divider"
-            else:
-                keyboard.press(line[j])
-                keyboard.release(line[j])
-                time.sleep(FAST_TYPING_DELAY)
-                j += 1
+            # Simuler la frappe d'un caractère
+            keyboard.press(line[j])
+            keyboard.release(line[j])
+            time.sleep(FAST_TYPING_DELAY)
+            char_count += 1  # Incrémentez le compteur de caractères
+            
+            # Vérifiez si le nombre de caractères tapés atteint la limite
+            if char_count >= CHARACTER_PAUSE_LIMIT:
+                time.sleep(CHARACTER_PAUSE_DURATION)  # Pause
+                char_count = 0  # Réinitialisez le compteur
+            
+            j += 1
         
         # Handle line breaks and formatting
         if i < len(lines) - 1:  # Check if there is a next line
@@ -121,33 +119,68 @@ def simulate_typing(text):
             
             if line.startswith("#"):
                 # One line break after titles
-                keyboard.press(Key.enter)
+                time.sleep(BEFORE_ENTER_DELAY)  # Délai avant d'appuyer sur entrée
+                keyboard.press(Key.space)  # Appuyer sur espace
+                keyboard.release(Key.space)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après espace
+                keyboard.press(Key.backspace)  # Appuyer sur backspace
+                keyboard.release(Key.backspace)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après backspace
+                keyboard.press(Key.enter)  # Appuyer sur entrée
                 keyboard.release(Key.enter)
-                time.sleep(ENTER_DELAY)
+                time.sleep(AFTER_ENTER_DELAY)
             
-            elif is_list_item:
+            elif is_list_item or is_task_item:
                 # One line break after each list item
-                keyboard.press(Key.enter)
+                time.sleep(BEFORE_ENTER_DELAY)  # Délai avant d'appuyer sur entrée
+                keyboard.press(Key.space)  # Appuyer sur espace
+                keyboard.release(Key.space)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après espace
+                keyboard.press(Key.backspace)  # Appuyer sur backspace
+                keyboard.release(Key.backspace)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après backspace
+                keyboard.press(Key.enter)  # Appuyer sur entrée
                 keyboard.release(Key.enter)
-                time.sleep(ENTER_DELAY)
-                
-                # Press Backspace after each list item, except for tasks
-                if not is_task_item:
-                    keyboard.press(Key.backspace)
-                    keyboard.release(Key.backspace)
-                    time.sleep(FAST_TYPING_DELAY)
+                time.sleep(AFTER_ENTER_DELAY)
+
+                keyboard.press(Key.backspace)
+                keyboard.release(Key.backspace)
+                time.sleep(FAST_TYPING_DELAY)
+            elif line.startswith(DIVIDER_STRING):  # Condition pour les diviseurs
+                # Ne pas effacer le diviseur
+                time.sleep(BEFORE_ENTER_DELAY)  # Délai avant d'appuyer sur entrée
+                keyboard.press(Key.enter)  # Appuyer sur entrée
+                keyboard.release(Key.enter)
+                time.sleep(AFTER_ENTER_DELAY)
             elif line.startswith(">"):
                 # No additional line break for quotes
                 pass
             else:
                 # One line break for other cases
-                keyboard.press(Key.enter)
+                time.sleep(BEFORE_ENTER_DELAY)  # Délai avant d'appuyer sur entrée
+                keyboard.press(Key.space)  # Appuyer sur espace
+                keyboard.release(Key.space)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après espace
+                keyboard.press(Key.backspace)  # Appuyer sur backspace
+                keyboard.release(Key.backspace)
+                time.sleep(FAST_TYPING_DELAY)  # Délai après backspace
+                keyboard.press(Key.enter)  # Appuyer sur entrée
                 keyboard.release(Key.enter)
-                time.sleep(ENTER_DELAY)
+                time.sleep(AFTER_ENTER_DELAY)
     
     simulating = False
     print("Simulation completed!")
-
+    
+    # Avant d'appuyer sur la touche entrée, ajoutez le délai
+    time.sleep(BEFORE_ENTER_DELAY)
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    time.sleep(FAST_TYPING_DELAY)  # Délai après espace 
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    
+    
+    
 def on_press(key):
     global running, simulating
     if key == Key.f8:  # F8 to start the simulation
