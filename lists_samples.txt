@@ -2,8 +2,7 @@ List Name : Onboarding
 
 # Welcome to Superlist! 👋
 We are super excited to have you onboard!
-Starting a new role is a big deal, and we're here to make sure you find
-your feet and feel part of the team from day one.
+Starting a new role is a big deal, and we're here to make sure you find your feet and feel part of the team from day one.
 
 Of course, we will guide you through your onboarding with a Superlist
 🚀 🚀
@@ -12,8 +11,7 @@ Of course, we will guide you through your onboarding with a Superlist
 
 # Let's get started!
 ## 💻 Equipment & tools:
-You probably have already received your laptop or will receive it
-shortly.
+You probably have already received your laptop or will receive it shortly.
 There are a few tools that you should setup on your first day:
 - [ ] Install Superlist!
 - [ ] Gmail account
@@ -30,12 +28,10 @@ List Name : This Week
 - [ ] Review Tags Loom
 - [ ] Widget Designs
 
-
 # Admin
 - [ ] Book flights for retreats
 - [ ] End of month receipts
 - [ ] 1:1 prep
-
 
 # Home
 - [ ] Pressure wash back patio
@@ -47,8 +43,7 @@ List Name : This Week
 
 List Name : All Hands
 
-Welcome to the All Hands list. Every two weeks the Superlist team
-comes together to demo, inform, and share their work.
+Welcome to the All Hands list. Every two weeks the Superlist team comes together to demo, inform, and share their work.
 
 ---
 
@@ -101,7 +96,9 @@ List Name : Superlist Onboarding 2.0
 To design and implement an improved onboarding process for Superlist that highlights the product's features, communicates our competitive advantages, and creates a lock-in effect by having users add content into the app.
 
 # Resources
-- [FigJam exploration](link)
+- [FigJam exploration](http://figjam.com)
+- [Miro board](http://miro.com)
+- http://google.com
 
 ---
 
@@ -121,8 +118,7 @@ To design and implement an improved onboarding process for Superlist that highli
 List Name : Family ❤️
 
 # 🏠 Family Chores
-A checklist to efficiently manage and divide family chores. Tailor the tasks to fit your
-household's needs and members.
+A checklist to efficiently manage and divide family chores. Tailor the tasks to fit your household's needs and members.
 
 ---
 
