@@ -1,0 +1,209 @@
+List Name : Onboarding
+
+# Welcome to Superlist! 👋
+We are super excited to have you onboard!
+Starting a new role is a big deal, and we're here to make sure you find
+your feet and feel part of the team from day one.
+
+Of course, we will guide you through your onboarding with a Superlist
+🚀 🚀
+
+---
+
+# Let's get started!
+## 💻 Equipment & tools:
+You probably have already received your laptop or will receive it
+shortly.
+There are a few tools that you should setup on your first day:
+- [ ] Install Superlist!
+- [ ] Gmail account
+- [ ] Create and manage Slack account
+- [ ] Accept your Zoom invitation
+
+==================================
+
+List Name : This Week
+
+# Design
+- [ ] Initiate new teams research
+- [ ] Weekly Social Graphics
+- [ ] Review Tags Loom
+- [ ] Widget Designs
+
+
+# Admin
+- [ ] Book flights for retreats
+- [ ] End of month receipts
+- [ ] 1:1 prep
+
+
+# Home
+- [ ] Pressure wash back patio
+- [ ] Plant bulbs from Amsterdam
+- [ ] Meal prep office lunches
+- [ ] Pay credit cards
+
+==================================
+
+List Name : All Hands
+
+Welcome to the All Hands list. Every two weeks the Superlist team
+comes together to demo, inform, and share their work.
+
+---
+
+# 📚 Agenda
+
+- [ ] 🗺️ Roadmap & Ops
+- [ ] ⚡ FusionForce
+- [ ] 🔺 Bermuda
+- [ ] 😺 Creepy Cats
+- [ ] 🔊 User Voice
+- [ ] 📈 User Growth
+- [ ] Others
+
+---
+
+# 🗄️ Archive
+
+==================================
+
+List Name : Weekly Marketing Sync
+
+# Review
+1. Metrics Review
+1. Recap Last Week: Insights & Learnings
+1. Customer Support Insights
+1. Issues & Roadblocks
+
+---
+
+# Plan
+- [ ] Upcoming activities
+
+---
+
+# Discuss
+- [ ] Performance from last emails
+- [ ] Design freelancer
+
+---
+
+# To Do
+- [ ] Marketing Websites
+- [ ] B2B Website
+
+==================================
+
+List Name : Superlist Onboarding 2.0
+
+# Objective
+To design and implement an improved onboarding process for Superlist that highlights the product's features, communicates our competitive advantages, and creates a lock-in effect by having users add content into the app.
+
+# Resources
+- [FigJam exploration](link)
+
+---
+
+# Week 10 (Mar 4 - Mar 8)
+- [ ] Finalize content for tutorial stage
+- [ ] Pull further usage data about onboarding
+- [ ] Start work on first designs
+
+---
+
+# Week 11 (Mar 11 - Mar 15)
+- [ ] Technical check-in with engineers
+- [ ] Share latest designs on team call
+
+==================================
+
+List Name : Family ❤️
+
+# 🏠 Family Chores
+A checklist to efficiently manage and divide family chores. Tailor the tasks to fit your
+household's needs and members.
+
+---
+
+# 🔁 Weekly Routine
+- [ ] Schedule chore day
+- [ ] Assign specific chores
+- [ ] Gather necessary supplies
+
+---
+
+# 📅 Day One: Laundry
+- [ ] Sort clothes
+- [ ] Wash and dry
+- [ ] Fold and/or hang
+
+==================================
+
+List Name : Website Project
+
+A place for us to keep all things related to the revamp of the website.
+
+---
+
+# Kick-off Meeting (June 10)
+## Meeting Goals
+- [ ] Discuss the project scope
+- [ ] Gather first ideas
+- [ ] Agree on timeline
+## Next steps
+- [ ] Set up weekly website meeting
+- [ ] Communicate meeting outcome in #Website channel
+## Notes
+- To increase conversion, we want to revamp our website to clearly demonstrate our value pillars
+- Hannah has already gathered inspiration from a few websites
+
+
+==================================
+
+List Name : Product Roundup
+
+# March 💥
+- [ ] Search for task and list titles
+- [ ] Unsplash integration
+- [ ] Landscape mode for tablets
+- [ ] Make & AI improvements
+
+---
+
+# What's next?
+- [ ] App translation
+- [ ] Natural language processing
+- [ ] Better team discoverability & usability
+- [ ] Improved in-product onboarding
+
+
+==================================
+
+List Name : Week 8
+
+# Goals
+- [ ] 🌟 User Onboarding Project
+- [ ] 🌟 February Report
+- [ ] 🌟 Integrations Deep Dive
+
+---
+
+# MONDAY
+- [ ] Schedule kick-off call for onboarding project
+- [ ] Prepare agenda for onboarding kick-off
+
+---
+
+# TUESDAY
+- [ ] Prep 1:1 notes
+
+---
+
+# WEDNESDAY
+- [ ] Brainstorm onboarding ideas in design team sync
+
+---
+
+# THURSDAY
+- [ ] Process user feedback call

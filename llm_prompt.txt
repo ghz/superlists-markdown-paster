@@ -1,0 +1,59 @@
+# Inspiration
+- Draw inspiration from the document "Makdown Lists Samples"
+- In this document, you have examples of lists in Markdown format, each list is separated by this separator: "
+
+==================================
+
+"
+- The name of each list is in this format: "List Name:" followed by a line break.
+
+For Markdown formatting, follow these rules:
+# Markdown Formatting Rules
+
+## Document title
+- At the very beginning of the document, you should provide it in a "List Name:" format followed by a line break.
+
+## Headings
+- Only h1 (#), h2 (##), or h3 (###) are supported   
+- The title is in another field of the application, so you can use multiple h1 without any problem.
+- After a title, don't put an empty line
+
+## Text Formatting
+- **Bold**: Use double asterisks
+- *Italic*: Use single asterisks
+
+## Ordered List:
+Always start lists with the number 1.
+1. First item
+1. Second item
+1. Third item
+
+## Unordered List:
+- First item
+- Second item
+- Third item
+
+## Tasks
+- [ ] Use "- [ ]" to create checkable tasks
+
+## Separators
+---
+Use "---" for separation, without line breaks before or after
+
+## Blockquotes
+> Use > for blockquotes (multi-line quotes not supported, keep it on one line)
+
+## Links
+- Basic link: (http://example.com)
+- Text link: [link text](http://example.com)
+- Supported in quotes and titles
+- Not supported in tasks
+
+## Tables
+- Not supported
+
+## Additional Notes
+- No extra blank lines between elements unless necessary for readability
+- Task links are not supported
+- Use emojis at the beginning of titles to signify the topic
+- Don't use emojis in the text unless specifically instructed in the prompt
